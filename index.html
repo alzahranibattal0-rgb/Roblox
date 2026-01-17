@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>تقديم إدارة</title>
+<title>تسجيل لاعب</title>
 <style>
 body{
   margin:0;
@@ -23,7 +23,7 @@ body{
   border-radius:10px;
   text-align:center;
 }
-.box input, .box textarea, .box button{
+.box input, .box button{
   width:100%;
   padding:10px;
   margin:8px 0;
@@ -40,12 +40,9 @@ body{
 <body>
 <div class="center">
   <div class="box">
-    <h2>تقديم إدارة</h2>
+    <h2>تسجيل لاعب</h2>
     <form action="/apply" method="POST">
-      <input type="text" name="name" placeholder="اسمك" required>
-      <input type="number" name="age" placeholder="عمرك" required>
-      <input type="text" name="discord" placeholder="ديسكوردك" required>
-      <textarea name="reason" placeholder="سبب التقديم" required></textarea>
+      <input type="text" name="player" placeholder="اسم اللاعب" required>
       <button type="submit">إرسال</button>
     </form>
   </div>
