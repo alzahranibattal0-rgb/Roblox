@@ -8,7 +8,7 @@ app.use(express.json());
 const PORT = 3000;
 
 const ADMIN_EMAIL = "battal.alzahrani23@gmail.com";
-const APP_PASSWORD = "PUT_YOUR_APP_PASSWORD_HERE"; // App Password من Gmail
+const ffffoe239 = "PUT_YOUR_APP_PASSWORD_HERE"; // App Password من Gmail
 
 const requests = {};
 
