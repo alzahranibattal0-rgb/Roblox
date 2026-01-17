@@ -13,8 +13,13 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "battal.alzahrani23@gmail.com",
-    pass: "APP_PASSWORD" // هنا تحط App Password من Google
+    pass: "APP_PASSWORD"
   }
+});
+
+// هذا يفتح الصفحة الرئيسية
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.post("/apply", (req, res) => {
@@ -25,7 +30,7 @@ app.post("/apply", (req, res) => {
     text: `تم تسجيل لاعب جديد:\nالاسم: ${req.body.player}`
   };
 
-  transporter.sendMail(mail, (err, info) => {
+  transporter.sendMail(mail, (err) => {
     if (err) {
       console.log(err);
       return res.send("صار خطأ ❌");
