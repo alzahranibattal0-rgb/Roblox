@@ -2,72 +2,123 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>تسجيل الدخول</title>
+<title>Roblox Style Page</title>
 
 <style>
 body{
   margin:0;
-  height:100vh;
   font-family:Arial, sans-serif;
-  background:#6e6e6e;
+  background:#000;
+  color:white;
+}
+
+/* Top Bar */
+.topbar{
+  background:#111;
+  height:50px;
+  display:flex;
+  align-items:center;
+  padding:0 15px;
+}
+
+.logo{
+  font-weight:bold;
+  margin-right:15px;
+}
+
+.menu a{
+  color:white;
+  margin:0 8px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.search{
+  margin-left:auto;
+}
+
+.search input{
+  padding:5px;
+  border-radius:4px;
+  border:none;
+}
+
+.btn-blue{
+  background:#1f7aff;
+  color:white;
+  padding:6px 12px;
+  border-radius:5px;
+  margin-left:10px;
+  text-decoration:none;
+}
+
+.btn-dark{
+  background:#333;
+  color:white;
+  padding:6px 12px;
+  border-radius:5px;
+  margin-left:8px;
+  text-decoration:none;
+}
+
+/* Login Box */
+.center{
+  height:calc(100vh - 50px);
   display:flex;
   justify-content:center;
   align-items:center;
 }
 
 .box{
-  background:#1e1e1e;
-  padding:25px;
-  width:300px;
-  border-radius:12px;
-  box-shadow:0 0 20px rgba(0,0,0,0.7);
-  color:white;
+  background:#202225;
+  padding:30px;
+  width:340px;
+  border-radius:10px;
   text-align:center;
 }
 
-.box h2{
-  margin-bottom:18px;
-}
-
-.box input{
+.box input, .box button{
   width:100%;
   padding:10px;
-  margin:7px 0;
+  margin:8px 0;
   border:none;
-  border-radius:6px;
+  border-radius:5px;
 }
 
 .box button{
-  width:100%;
-  padding:10px;
-  margin-top:12px;
   background:#00b06f;
-  border:none;
   color:white;
-  font-size:15px;
-  border-radius:6px;
   cursor:pointer;
-}
-
-.box button:hover{
-  background:#00965f;
-}
-
-.small{
-  margin-top:10px;
-  font-size:12px;
-  color:#aaa;
 }
 </style>
 </head>
 <body>
 
-<div class="box">
-  <h2>تسجيل الدخول</h2>
-  <input type="text" placeholder="اسم المستخدم / الإيميل">
-  <input type="password" placeholder="كلمة المرور">
-  <button>تسجيل الدخول</button>
-  <div class="small">نسيت كلمة المرور؟</div>
+<div class="topbar">
+  <div class="logo">ROBLOX</div>
+
+  <div class="menu">
+    <a href="#">الرئيسية</a>
+    <a href="#">السوق</a>
+    <a href="#">إنشاء</a>
+    <a href="#">Robux</a>
+  </div>
+
+  <div class="search">
+    <input type="text" placeholder="بحث">
+  </div>
+
+  <a href="#" class="btn-dark">تسجيل الدخول</a>
+  <a href="#" class="btn-blue">تسجيل الدخول</a>
+</div>
+
+<div class="center">
+  <div class="box">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" placeholder="اسم المستخدم / الإيميل">
+    <input type="password" placeholder="كلمة المرور">
+    <button>تسجيل الدخول</button>
+  </div>
 </div>
 
 </body>
