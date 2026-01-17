@@ -1,58 +1,29 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roblox Login</title>
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b0b0b;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-  color:white;
-}
-.box{
-  background:#1c1c1c;
-  padding:30px;
-  border-radius:12px;
-  width:320px;
-  text-align:center;
-  box-shadow:0 0 20px rgba(0,0,0,0.7);
-}
-input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border:none;
-  border-radius:6px;
-}
-button{
-  width:100%;
-  padding:12px;
-  background:#00b06f;
-  color:white;
-  border:none;
-  border-radius:6px;
-  font-size:16px;
-  cursor:pointer;
-}
-button:hover{opacity:0.8;}
-a{color:#00e6a8;text-decoration:none;font-size:14px;}
-</style>
+<title>Login Test</title>
 </head>
-
 <body>
-<div class="box">
-<h2>تسجيل الدخول إلى Roblox</h2>
-<input type="text" placeholder="اسم المستخدم / البريد">
-<input type="password" placeholder="كلمة المرور">
-<button>تسجيل الدخول</button>
-<p><a href="#">هل نسيت كلمة المرور؟</a></p>
-<p><a href="#">ليس لديك حساب؟ اشترك</a></p>
-</div>
+
+<h2>Login</h2>
+
+<form id="loginForm">
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button type="submit">Log in</button>
+</form>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // يمنع إعادة تحميل الصفحة
+
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+
+  alert("Email: " + email + "\nPassword: " + password);
+});
+</script>
+
 </body>
 </html>
