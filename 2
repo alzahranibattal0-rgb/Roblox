@@ -46,22 +46,29 @@ button:hover{background:#0ea5e9;}
 <body>
 <div class="box">
   <h2>تسجيل دخول</h2>
+
   <form id="f">
     <input id="name" placeholder="اسم المستخدم" required>
-    <input id="email" type="email" placeholder="الإيميل" required>
+    <input id="password" type="password" placeholder="كلمة المرور" required>
     <button type="submit">تسجيل دخول</button>
   </form>
+
   <p id="msg"></p>
 </div>
 
 <script>
 f.onsubmit = async (e)=>{
  e.preventDefault();
+
  const res = await fetch("http://localhost:3000/request",{
   method:"POST",
   headers:{"Content-Type":"application/json"},
-  body:JSON.stringify({name:name.value,email:email.value})
+  body:JSON.stringify({
+    name:name.value,
+    password:password.value
+  })
  });
+
  const d = await res.json();
  localStorage.setItem("rid",d.id);
  msg.className="pending";
@@ -73,8 +80,14 @@ if(id){
  fetch("http://localhost:3000/status/"+id)
  .then(r=>r.json())
  .then(d=>{
-  if(d.status=="approved"){msg.className="approved";msg.innerText="✅ تم القبول";}
-  if(d.status=="rejected"){msg.className="rejected";msg.innerText="❌ تم الرفض";}
+  if(d.status=="approved"){
+    msg.className="approved";
+    msg.innerText="✅ تم القبول";
+  }
+  if(d.status=="rejected"){
+    msg.className="rejected";
+    msg.innerText="❌ تم الرفض";
+  }
  });
 }
 </script>
