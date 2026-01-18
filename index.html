@@ -8,8 +8,11 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#1c1f26;
   color:white;
+  background:
+    linear-gradient(rgba(20,22,30,0.85), rgba(20,22,30,0.85)),
+    url("IMG_0161.png") no-repeat center center fixed;
+  background-size:cover;
 }
 
 /* الشريط */
@@ -20,58 +23,22 @@ body{
   align-items:center;
   padding:0 18px;
 }
-.logo{
-  font-size:24px;
-  font-weight:900;
-  margin-right:20px;
-}
-.links{
-  display:flex;
-  gap:18px;
-}
-.links a{
-  color:#ddd;
-  text-decoration:none;
-  font-size:14px;
-}
+.logo{font-size:24px;font-weight:900;margin-right:20px;}
+.links{display:flex;gap:18px;}
+.links a{color:#ddd;text-decoration:none;font-size:14px;}
 .links a:hover{color:white}
-.actions{
-  margin-left:auto;
-  display:flex;
-  gap:10px;
-}
-.btn-blue{
-  background:#2a7cff;
-  border:none;
-  color:white;
-  padding:8px 14px;
-  border-radius:8px;
-}
-.btn-dark{
-  background:#111;
-  border:1px solid #555;
-  color:white;
-  padding:8px 14px;
-  border-radius:8px;
-}
+.actions{margin-left:auto;display:flex;gap:10px;}
+.btn-blue{background:#2a7cff;border:none;color:white;padding:8px 14px;border-radius:8px;}
+.btn-dark{background:#111;border:1px solid #555;color:white;padding:8px 14px;border-radius:8px;}
 
-/* الصفحة */
-.main{
-  display:flex;
-  justify-content:center;
-  margin-top:60px;
-}
+/* الصندوق */
+.main{display:flex;justify-content:center;margin-top:70px;}
 .box{
-  background:#23262f;
+  background:rgba(35,38,47,0.95);
   width:380px;
   padding:25px;
   border-radius:12px;
   text-align:center;
-}
-.hero-img{
-  width:100%;
-  border-radius:10px;
-  margin-bottom:15px;
 }
 .box h2{margin:10px 0;}
 .box input{
@@ -124,10 +91,6 @@ body{
 
 <div class="main">
 <div class="box">
-
-  <!-- الصورة -->
-  <img src="IMG_0161.png" class="hero-img">
-
   <h2>تسجيل الدخول إلى Roblox</h2>
 
   <input type="text" placeholder="اسم المستخدم">
@@ -142,7 +105,6 @@ body{
   <button class="sec">تسجيل دخول سريع</button>
 
   <div class="small">ليس لديك حساب؟ اشترك</div>
-
 </div>
 </div>
 
