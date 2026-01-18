@@ -1,119 +1,55 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Roblox Login</title>
-
+<title>Form</title>
 <style>
 body{
-  background:#0f1117;
-  font-family:Arial, Tahoma;
+  background:#111;
+  color:#fff;
+  font-family:Arial;
   display:flex;
   justify-content:center;
   align-items:center;
   height:100vh;
-  margin:0;
-  color:#fff;
 }
-
-.login-box{
-  background:#1f232b;
+form{
+  background:#1c1c1c;
   padding:25px;
-  border-radius:14px;
-  width:330px;
-  box-shadow:0 0 25px rgba(0,0,0,0.5);
-  text-align:center;
+  border-radius:10px;
+  width:300px;
 }
-
-.logo{
-  width:80px;
-  margin-bottom:10px;
-}
-
-.login-box h2{
-  margin-bottom:20px;
-  font-size:20px;
-}
-
-.login-box input{
+input, textarea, button{
   width:100%;
-  padding:12px;
   margin-top:10px;
-  border-radius:10px;
+  padding:10px;
+  border-radius:5px;
   border:none;
-  background:#2b2f3a;
-  color:#fff;
-  font-size:14px;
 }
-
-.login-btn{
-  width:100%;
-  margin-top:15px;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid #fff;
-  background:transparent;
-  color:#fff;
+button{
+  background:#00ff88;
+  font-weight:bold;
   cursor:pointer;
 }
-
-.login-btn:hover{
-  background:#fff;
-  color:#000;
-}
-
-.forgot, .signup{
-  text-align:center;
-  font-size:13px;
-  margin-top:12px;
-  color:#cfd3ff;
-}
-
-.divider{
-  height:1px;
-  background:#444;
-  margin:18px 0;
-}
-
-.email-btn, .quick-btn{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:none;
-  margin-top:10px;
-  background:#2b2f3a;
-  color:#fff;
-  cursor:pointer;
-}
-
-.email-btn:hover, .quick-btn:hover{
-  background:#3a3f4d;
+button:hover{
+  background:#00cc6f;
 }
 </style>
 </head>
 <body>
 
-<div class="login-box">
+<form action="https://formsubmit.co/YOUREMAIL@gmail.com" method="POST">
 
-  <!-- غيّر الرابط للصورة اللي عندك -->
-  <img src="logo.png" class="logo" alt="Roblox Logo">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
 
-  <h2>تسجيل الدخول إلى Roblox</h2>
+  <h3>إرسال البيانات</h3>
 
-  <input type="text" placeholder="اسم المستخدم/البريد الإلكتروني">
-  <input type="password" placeholder="كلمة المرور">
+  <input type="text" name="Name" placeholder="اسمك" required>
+  <textarea name="Message" placeholder="اكتب هنا" rows="4" required></textarea>
 
-  <button class="login-btn">تسجيل الدخول</button>
-
-  <p class="forgot">نسيت كلمة المرور أو اسم المستخدم؟</p>
-
-  <div class="divider"></div>
-
-  <button class="email-btn">إرسال رمز صالح لمرة واحدة عبر البريد الإلكتروني</button>
-  <button class="quick-btn">تسجيل دخول سريع</button>
-
-  <p class="signup">ليس لديك حساب؟ اشترك</p>
-</div>
+  <button type="submit">إرسال</button>
+</form>
 
 </body>
 </html>
