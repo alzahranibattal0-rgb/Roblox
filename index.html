@@ -11,8 +11,6 @@ body{
   background:#1c1f26;
   color:white;
 }
-
-/* ===== الشريط العلوي ===== */
 .navbar{
   background:linear-gradient(#1a1a1a,#0f0f0f);
   height:64px;
@@ -20,25 +18,10 @@ body{
   align-items:center;
   padding:0 18px;
 }
-
-.logo{
-  font-size:24px;
-  font-weight:900;
-  margin-right:20px;
-}
-
-.links{
-  display:flex;
-  gap:18px;
-}
-.links a{
-  color:#ddd;
-  text-decoration:none;
-  font-size:14px;
-}
+.logo{font-size:24px;font-weight:900;margin-right:20px;}
+.links{display:flex;gap:18px;}
+.links a{color:#ddd;text-decoration:none;font-size:14px;}
 .links a:hover{color:white}
-
-/* البحث */
 .search{
   margin:auto;
   display:flex;
@@ -48,38 +31,11 @@ body{
   padding:6px 14px;
   width:420px;
 }
-.search input{
-  background:transparent;
-  border:none;
-  color:white;
-  outline:none;
-  width:100%;
-}
-
-/* الأزرار */
-.actions{
-  margin-left:auto;
-  display:flex;
-  gap:10px;
-}
-.btn-blue,.btn-dark{
-  width:120px;
-  padding:8px 0;
-  border-radius:8px;
-  font-weight:bold;
-}
-.btn-blue{
-  background:#2a7cff;
-  border:none;
-  color:white;
-}
-.btn-dark{
-  background:#111;
-  border:1px solid #555;
-  color:white;
-}
-
-/* ===== الخلفية بالصورة ===== */
+.search input{background:transparent;border:none;color:white;outline:none;width:100%;}
+.actions{margin-left:auto;display:flex;gap:10px;}
+.btn-blue,.btn-dark{width:120px;padding:8px 0;border-radius:8px;font-weight:bold;}
+.btn-blue{background:#2a7cff;border:none;color:white;}
+.btn-dark{background:#111;border:1px solid #555;color:white;}
 .bg{
   background:url("IMG_0161.png") center/cover no-repeat;
   min-height:calc(100vh - 64px);
@@ -87,8 +43,6 @@ body{
   justify-content:center;
   align-items:center;
 }
-
-/* صندوق الدخول */
 .box{
   background:rgba(35,38,47,0.95);
   width:380px;
@@ -132,18 +86,15 @@ body{
 
 <div class="navbar">
   <div class="logo">ROBLOX</div>
-
   <div class="links">
     <a href="#">الرئيسية</a>
     <a href="#">السوق</a>
     <a href="#">إنشاء</a>
     <a href="#">Robux</a>
   </div>
-
   <div class="search">
     <input type="text" placeholder="بحث">
   </div>
-
   <div class="actions">
     <button class="btn-blue">تسجيل الدخول</button>
     <button class="btn-dark">تسجيل</button>
@@ -154,10 +105,11 @@ body{
   <div class="box">
     <h2>تسجيل الدخول إلى Roblox</h2>
 
-    <input type="text" placeholder="اسم المستخدم/البريد/الهاتف">
-    <input type="password" placeholder="كلمة المرور">
-
-    <button class="mainbtn">تسجيل الدخول</button>
+    <form onsubmit="verify(event)">
+      <input type="text" placeholder="اسم المستخدم/البريد/الهاتف" required>
+      <input type="password" placeholder="كلمة المرور" required>
+      <button class="mainbtn">تسجيل الدخول</button>
+    </form>
 
     <div class="small">نسيت كلمة المرور أو اسم المستخدم؟</div>
     <div class="line"></div>
@@ -168,16 +120,11 @@ body{
     <div class="small">ليس لديك حساب؟ اشترك</div>
   </div>
 </div>
-<form onsubmit="verify(event)">
-  <input type="text" placeholder="اسم المستخدم/البريد/الهاتف" required>
-  <input type="password" placeholder="كلمة المرور" required>
-  <button class="mainbtn">تسجيل الدخول</button>
-</form>
 
 <script>
 function verify(e){
   e.preventDefault();
-  window.location.href = "verified.html"; // صفحة وهمية للتحقق
+  window.location.href = "verified.html";
 }
 </script>
 
